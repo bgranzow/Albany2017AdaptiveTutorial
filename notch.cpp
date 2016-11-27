@@ -18,15 +18,14 @@ static const double tri_height = 0.025;
 static const double tri_end_x = (width-ligament);
 static const double tri_end_y = notch_radius+0.005;
 
-PointPtr p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16;
-ObjPtr l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19;
+PointPtr p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16;
+ObjPtr l1,l2,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19;
 
 static void create_points() {
   p1 = new_point2(Vector{0,0,0});
   p2 = new_point2(Vector{width-ligament-notch_radius,0,0});
   p3 = new_point2(Vector{width-ligament,0,0});
   p4 = new_point2(Vector{width-ligament,notch_radius,0});
-  p5 = new_point2(Vector{tri_end_x,notch_radius,0});
   p6 = new_point2(
       Vector{sqrt(pow(large_radius,2)-pow(notch_radius,2)),notch_radius,0});
   p7 = new_point2(Vector{width,notch_radius,0});
@@ -44,8 +43,7 @@ static void create_points() {
 static void create_lines() {
   l1 = new_line2(p1,p2);
   l2 = new_arc2(p2,p3,p4);
-  l3 = new_line2(p4,p5);
-  l4 = new_line2(p5,p6);
+  l4 = new_line2(p4,p6);
   l5 = new_line2(p6,p7);
   l6 = new_line2(p7,p8);
   l7 = new_line2(p8,p9);
@@ -53,7 +51,7 @@ static void create_lines() {
   l9 = new_line2(p10,p11);
   l10 = new_line2(p11,p1);
   l11 = new_line2(p11,p12);
-  l12 = new_line2(p12,p5);
+  l12 = new_line2(p12,p4);
   l13 = new_arc2(p10,p1,p6);
   l14 = new_line2(p8,p13);
   l15 = new_line2(p13,p14);
@@ -87,7 +85,6 @@ static ObjPtr create_face3() {
   auto loop = new_loop();
   add_use(loop, FORWARD, l1);
   add_use(loop, FORWARD, l2);
-  add_use(loop, FORWARD, l3);
   add_use(loop, REVERSE, l12);
   add_use(loop, REVERSE, l11);
   add_use(loop, FORWARD, l10);
