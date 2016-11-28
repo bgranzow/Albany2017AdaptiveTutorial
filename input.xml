@@ -27,7 +27,7 @@
     <Parameter name="Method" type="string" value="PUMI"/>
     <Parameter name="Workset Size" type="int" value="10000"/>
     <Parameter name="Mesh Model Input File Name" type="string" value="notch.dmg"/>
-    <Parameter name="PUMI Input File Name" type="string" value="notch.smb"/>
+    <Parameter name="PUMI Input File Name" type="string" value="notch-4p-.smb"/>
     <Parameter name="PUMI Output File Name" type="string" value="out_notch.vtk"/>
     <Parameter name="Model Associations File Name" type="string" value="assoc.txt"/>
     <Parameter name="Cubature Degree" type="int" value="1"/>
