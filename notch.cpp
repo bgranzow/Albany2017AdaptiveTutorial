@@ -17,27 +17,31 @@ static const double large_radius = 0.04;
 static const double tri_height = 0.025;
 static const double tri_end_x = (width-ligament);
 static const double tri_end_y = notch_radius+0.005;
+static const double small = 0.00075;
+static const double medium = 0.0025;
+static const double large = 0.01;
+static const double larger = 0.05;
 
 PointPtr p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16;
 ObjPtr l1,l2,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19;
 
 static void create_points() {
-  p1 = new_point2(Vector{0,0,0});
-  p2 = new_point2(Vector{width-ligament-notch_radius,0,0});
-  p3 = new_point2(Vector{width-ligament,0,0});
-  p4 = new_point2(Vector{width-ligament,notch_radius,0});
-  p6 = new_point2(
-      Vector{sqrt(pow(large_radius,2)-pow(notch_radius,2)),notch_radius,0});
-  p7 = new_point2(Vector{width,notch_radius,0});
-  p8 = new_point2(Vector{width,height1,0});
-  p9 = new_point2(Vector{0,height1,0});
-  p10 = new_point2(Vector{0,large_radius,0});
-  p11 = new_point2(Vector{0,tri_height,0});
-  p12 = new_point2(Vector{tri_end_x,tri_end_y,0});
-  p13 = new_point2(Vector{width,height1+height2,0});
-  p14 = new_point2(Vector{0,height1+height2,0});
-  p15 = new_point2(Vector{width,height1+height2+height3,0});
-  p16 = new_point2(Vector{0,height1+height2+height3,0});
+  p1 = new_point3(Vector{0,0,0}, medium);
+  p2 = new_point3(Vector{width-ligament-notch_radius,0,0}, small);
+  p3 = new_point3(Vector{width-ligament,0,0}, small);
+  p4 = new_point3(Vector{width-ligament,notch_radius,0}, small);
+  p6 = new_point3(
+      Vector{sqrt(pow(large_radius,2)-pow(notch_radius,2)),notch_radius,0}, medium);
+  p7 = new_point3(Vector{width,notch_radius,0}, large);
+  p8 = new_point3(Vector{width,height1,0}, large);
+  p9 = new_point3(Vector{0,height1,0}, large);
+  p10 = new_point3(Vector{0,large_radius,0}, medium);
+  p11 = new_point3(Vector{0,tri_height,0}, medium);
+  p12 = new_point3(Vector{tri_end_x,tri_end_y,0}, medium);
+  p13 = new_point3(Vector{width,height1+height2,0}, larger);
+  p14 = new_point3(Vector{0,height1+height2,0}, larger);
+  p15 = new_point3(Vector{width,height1+height2+height3,0}, larger);
+  p16 = new_point3(Vector{0,height1+height2+height3,0}, larger);
 }
 
 static void create_lines() {
@@ -111,7 +115,7 @@ static ObjPtr create_face5() {
 
 }
 
-int main()
+int main(int argc, char** argv)
 {
   default_size = 0.005;
   assert((width-ligament-notch_radius) > 0);
