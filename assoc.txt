@@ -1,0 +1,25 @@
+element block upper 1
+3 147
+element block middle 1
+3 143
+element block lower1 1
+3 131
+element block lower2 1
+3 135
+element block lower3 1
+3 139
+node set bottom 1
+2 99
+node set xmin 4
+2 74
+2 83
+2 118
+2 92
+node set zmin 5
+2 42
+2 40
+2 34
+2 36
+2 38
+node set top 1
+2 77
