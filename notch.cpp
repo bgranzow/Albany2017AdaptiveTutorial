@@ -22,6 +22,9 @@ static const double medium = 0.0025;
 static const double large = 0.01;
 static const double larger = 0.05;
 
+static const double divet_radius = (width-ligament-notch_radius)/6;
+static const double num_divets = 6;
+
 PointPtr p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16;
 ObjPtr l1,l2,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19;
 
@@ -113,11 +116,34 @@ static ObjPtr create_face5() {
   return new_plane2(loop);
 }
 
+static void insert_divets(ObjPtr bar) {
+  default_size = small;
+  auto region = bar->used[2].obj;
+  auto face = region->used[0].obj->used[2].obj;
+  double x = (width-ligament-notch_radius)/2.0;
+  double spacing = depth/(num_divets+1.0);
+  double z = spacing;
+  for (int i=0; i < num_divets; ++i) {
+    auto circle = new_circle(
+        Vector{x,0,z},
+        Vector{0,1,0},
+        Vector{divet_radius,0,0});
+    auto shell = new_shell();
+    make_hemisphere(circle,
+        new_point2(Vector{x,0,z}),
+        shell, FORWARD);
+    weld_half_shell_onto(region, face, shell, REVERSE);
+    z += spacing;
+  }
+}
+
 }
 
 int main(int argc, char** argv)
 {
-  default_size = 0.005;
+  assert(argc == 2);
+  bool use_divets = atoi(argv[1]);
+  default_size = large;
   assert((width-ligament-notch_radius) > 0);
   assert((width-ligament) == tri_end_x);
   assert(tri_height < large_radius);
@@ -139,6 +165,8 @@ int main(int argc, char** argv)
   auto ext = extrude_face_group(group,
       [](Vector a){return a + Vector{0,0,depth};});
   auto bar = ext.middle;
+  if (use_divets)
+    insert_divets(bar);
   write_closure_to_geo(bar, "notch.geo");
   write_closure_to_dmg(bar, "notch.dmg");
 }

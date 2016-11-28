@@ -4,7 +4,7 @@ all: $(NAME).geo
 
 $(NAME).geo: $(NAME).cpp
 	mpicxx -std=c++11 $(NAME).cpp -o $(NAME) -I${GMODEL_DIR}/include -L${GMODEL_DIR}/lib -lgmodel
-	./$(NAME)
+	./$(NAME) 1
 $(NAME).msh: $(NAME).geo
 	gmsh -3 $(NAME).geo -o $(NAME).msh  
 $(NAME).smb: $(NAME).msh
