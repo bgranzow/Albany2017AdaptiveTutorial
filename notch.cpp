@@ -142,7 +142,7 @@ static void insert_divets(ObjPtr bar) {
 int main(int argc, char** argv)
 {
   assert(argc == 2);
-  bool use_divets = atoi(argv[1]);
+  bool use_divets = false;
   default_size = large;
   assert((width-ligament-notch_radius) > 0);
   assert((width-ligament) == tri_end_x);
