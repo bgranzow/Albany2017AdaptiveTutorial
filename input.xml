@@ -2,7 +2,7 @@
   <ParameterList name="Problem">
     <Parameter name="Name" type="string" value="Mechanics 3D"/>
     <Parameter name="Solution Method" type="string" value="Continuation"/>
-    <Parameter name="MaterialDB Filename" type="string" value="J2.xml"/>
+    <Parameter name="MaterialDB Filename" type="string" value="materials.xml"/>
     <ParameterList name="Stabilized Pressure">
       <Parameter name="Variable Type" type="string" value="DOF"/>
     </ParameterList>
@@ -12,7 +12,7 @@
       <Parameter name="DBC on NS zmin for DOF Z" type="double" value="0.0"/>
       <ParameterList name="Time Dependent DBC on NS top for DOF Y">
         <Parameter name="Time Values" type="Array(double)" value="{0.0,1.0}"/>
-        <Parameter name="BC Values" type="Array(double)" value="{0.0,0.01}"/>
+        <Parameter name="BC Values" type="Array(double)" value="{0.0,0.75}"/>
       </ParameterList>
     </ParameterList>
     <ParameterList name="Parameters">
@@ -47,13 +47,13 @@
         <Parameter name="Continuation Method" type="string" value="Natural"/>
         <Parameter name="Initial Value" type="double" value="0.0"/>
         <Parameter name="Continuation Parameter" type="string" value="Time"/>
-        <Parameter name="Max Steps" type="int" value="10"/>
+        <Parameter name="Max Steps" type="int" value="100"/>
         <Parameter name="Max Value" type="double" value="1.0"/>
         <Parameter name="Min Value" type="double" value="0"/>
         <Parameter name="Compute Eigenvalues" type="bool" value="0"/>
       </ParameterList>
       <ParameterList name="Step Size">
-        <Parameter name="Initial Step Size" type="double" value="0.1"/>
+        <Parameter name="Initial Step Size" type="double" value="0.001"/>
         <Parameter name="Method" type="string" value="Constant"/>
       </ParameterList>
     </ParameterList>
