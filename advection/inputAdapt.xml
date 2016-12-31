@@ -21,6 +21,7 @@
       <Parameter name="Error Bound"     type="double" value="0.012"/>
       <Parameter name="Maximum Size"    type="double" value="0.9"/>
       <Parameter name="Overshoot Allowance" type="double" value="2.8"/>
+      <Parameter name="Equilibrate" type="bool" value="false"/>
     </ParameterList>
   </ParameterList>
   <ParameterList name="Discretization">
