@@ -3,13 +3,13 @@
 int main()
 {
   using namespace gmod;
-  default_size = 0.05;
-  auto p0 = new_point2(Vector{0,0,0});
-  auto p1 = new_point2(Vector{0,-1,0});
-  auto p2 = new_point2(Vector{1,-1,0});
-  auto p3 = new_point2(Vector{1,1,0});
-  auto p4 = new_point2(Vector{-1,1,0});
-  auto p5 = new_point2(Vector{-1,0,0});
+  default_size = 0.1;
+  auto p0 = new_point2(Vector{2,2,0});
+  auto p1 = new_point2(Vector{2,0,0});
+  auto p2 = new_point2(Vector{4,0,0});
+  auto p3 = new_point2(Vector{4,4,0});
+  auto p4 = new_point2(Vector{0,4,0});
+  auto p5 = new_point2(Vector{0,2,0});
   auto l0 = new_line2(p0,p1);
   auto l1 = new_line2(p1,p2);
   auto l2 = new_line2(p2,p3);
