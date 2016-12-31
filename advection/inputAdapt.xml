@@ -22,6 +22,7 @@
       <Parameter name="Maximum Size"    type="double" value="0.9"/>
       <Parameter name="Overshoot Allowance" type="double" value="2.8"/>
       <Parameter name="Gradation Rate Limit" type="double" value="1.0"/>
+      <Parameter name="Equilibrate" type="bool" value="false"/>
     </ParameterList>
   </ParameterList>
   <ParameterList name="Discretization">
