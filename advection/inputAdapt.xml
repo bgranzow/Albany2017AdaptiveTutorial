@@ -18,9 +18,10 @@
       <Parameter name="Remesh Strategy" type="string" value="Continuous"/>
       <Parameter name="Method"          type="string" value="RPI Omega_h"/>
       <Parameter name="Size Method"     type="string" value="Hessian"/>
-      <Parameter name="Error Bound"     type="double" value="0.012"/>
+      <Parameter name="Error Bound"     type="double" value="0.011"/>
       <Parameter name="Maximum Size"    type="double" value="0.9"/>
       <Parameter name="Overshoot Allowance" type="double" value="2.8"/>
+      <Parameter name="Gradation Rate Limit" type="double" value="1.0"/>
     </ParameterList>
   </ParameterList>
   <ParameterList name="Discretization">
@@ -45,8 +46,8 @@
         <Parameter name="Continuation Method" type="string" value="Natural"/>
         <Parameter name="Initial Value" type="double" value="0.0"/>
         <Parameter name="Continuation Parameter" type="string" value="Time"/>
-        <Parameter name="Max Steps" type="int" value="3"/>
-        <Parameter name="Max Value" type="double" value="3.0"/>
+        <Parameter name="Max Steps" type="int" value="6"/>
+        <Parameter name="Max Value" type="double" value="6.0"/>
         <Parameter name="Min Value" type="double" value="0"/>
         <Parameter name="Compute Eigenvalues" type="bool" value="0"/>
       </ParameterList>
