@@ -26,6 +26,13 @@
     <ParameterList name="Response Functions">
       <Parameter name="Number" type="int" value="0"/>
     </ParameterList>
+    <ParameterList name="Adaptation">
+      <Parameter name="Reference Configuration: Update" type="bool" value="true"/>
+      <Parameter name="Remesh Strategy" type="string" value="Continuous"/>
+      <Parameter name="Method"      type="string" value="RPI Constant Size"/>
+      <Parameter name="Equilibrate" type="bool" value="false"/>
+      <Parameter name="Target Element Size" type="double" value="0.025"/>
+    </ParameterList>
   </ParameterList>
   <ParameterList name="Discretization">
     <Parameter name="Method" type="string" value="PUMI"/>
