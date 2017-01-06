@@ -41,7 +41,7 @@
     <Parameter name="PUMI Input File Name" type="string" value="bar.smb"/>
     <Parameter name="PUMI Output File Name" type="string" value="out_twist.vtk"/>
     <Parameter name="Model Associations File Name" type="string" value="assoc.txt"/>
-    <Parameter name="Cubature Degree" type="int" value="3"/>
+    <Parameter name="Cubature Degree" type="int" value="1"/>
     <Parameter name="Separate Evaluators by Element Block" type="bool" value="false"/>
   </ParameterList>
   <ParameterList name="Regression Results">
